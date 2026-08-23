@@ -1,0 +1,134 @@
+generated: '2026-08-23'
+method: probed
+source: direct HTTPS probes of every IntusCare host, 2026-08-23
+note: >-
+  No .well-known document was served by any IntusCare host. Two of the four hosts
+  (intus.care, iris.intus.care) are single-page applications whose catch-all route answers
+  HTTP 200 with the app HTML shell for every path, so their 200s are NOT documents and are
+  recorded as misses. carehub.intus.care returns honest 404s. intuscare.com answers HTTP
+  202 with a SiteGround "sgcaptcha" JavaScript challenge interstitial for every path,
+  including /robots.txt, so nothing on that host could be read directly. Because no path
+  returned a real document, no WellKnown or SecurityTxt pointer is emitted in apis.yml.
+hosts:
+- host: intuscare.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 202
+    file: null
+    note: SiteGround bot-challenge interstitial, not a document
+  - path: /.well-known/openid-configuration
+    status: 202
+    file: null
+    note: SiteGround bot-challenge interstitial, not a document
+  - path: /.well-known/oauth-authorization-server
+    status: 202
+    file: null
+    note: SiteGround bot-challenge interstitial, not a document
+  - path: /.well-known/api-catalog
+    status: 202
+    file: null
+    note: SiteGround bot-challenge interstitial, not a document
+  - path: /.well-known/ai-plugin.json
+    status: 202
+    file: null
+    note: SiteGround bot-challenge interstitial, not a document
+  - path: /.well-known/agent-card.json
+    status: 202
+    file: null
+    note: SiteGround bot-challenge interstitial, not a document
+  - path: /.well-known/agent.json
+    status: 202
+    file: null
+    note: SiteGround bot-challenge interstitial, not a document
+- host: carehub.intus.care
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+- host: intus.care
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    file: null
+    note: SPA catch-all returned the application HTML shell, not a document — counted as a miss
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: null
+    note: SPA catch-all returned the application HTML shell, not a document — counted as a miss
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    file: null
+    note: SPA catch-all returned the application HTML shell, not a document — counted as a miss
+  - path: /.well-known/oauth-protected-resource
+    status: 200
+    file: null
+    note: SPA catch-all returned the application HTML shell, not a document — counted as a miss
+  - path: /.well-known/api-catalog
+    status: 200
+    file: null
+    note: SPA catch-all returned the application HTML shell, not a document — counted as a miss
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    file: null
+    note: SPA catch-all returned the application HTML shell, not a document — counted as a miss
+  - path: /.well-known/agent-card.json
+    status: 200
+    file: null
+    note: SPA catch-all returned the application HTML shell, not a document — counted as a miss
+  - path: /.well-known/agent.json
+    status: 200
+    file: null
+    note: SPA catch-all returned the application HTML shell, not a document — counted as a miss
+- host: iris.intus.care
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    file: null
+    note: SPA catch-all returned the application HTML shell, not a document — counted as a miss
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: null
+    note: SPA catch-all returned the application HTML shell, not a document — counted as a miss
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    file: null
+    note: SPA catch-all returned the application HTML shell, not a document — counted as a miss
+  - path: /.well-known/api-catalog
+    status: 200
+    file: null
+    note: SPA catch-all returned the application HTML shell, not a document — counted as a miss
+  - path: /.well-known/agent-card.json
+    status: 200
+    file: null
+    note: SPA catch-all returned the application HTML shell, not a document — counted as a miss
+  - path: /.well-known/agent.json
+    status: 200
+    file: null
+    note: SPA catch-all returned the application HTML shell, not a document — counted as a miss
+summary:
+  hosts_probed: 4
+  documents_found: 0
+  security_txt: false
+  api_catalog: false
+  agent_card: false

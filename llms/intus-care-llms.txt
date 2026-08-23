@@ -1,0 +1,87 @@
+# IntusCare
+
+> IntusCare (Intus Care, Inc.) is a Providence, Rhode Island health technology company
+> serving PACE — Programs of All-Inclusive Care for the Elderly. It ships CareHub (a
+> PACE-native, ONC-certified EMR and care-management platform), IRIS (a risk-adjustment
+> and coding system for PACE and value-based care organizations), and a Population Health
+> & Utilization Management suite delivered alongside fractionally-staffed Integrated Care
+> Services clinicians. Founded 2019; serving 70+ PACE organizations.
+
+## Important: there is no public IntusCare API
+
+As of 2026-08-23, IntusCare publishes **no developer program, no API reference, no SDK,
+no webhook catalog and no machine-readable contract** (no OpenAPI, AsyncAPI, GraphQL SDL,
+Protobuf, WSDL, MCP server or A2A agent card). Every one of the following was probed and
+missed:
+
+- No `api.`, `developer.`, `docs.`, `app.` or `portal.` subdomain resolves on either
+  `intuscare.com` or `intus.care` (NXDOMAIN).
+- `https://carehub.intus.care/openapi.json`, `/swagger.json`, `/api-docs`,
+  `/fhir/R4/metadata` and every `/.well-known/*` path return HTTP 404.
+- `https://intus.care/` and `https://iris.intus.care/` are single-page applications whose
+  catch-all route answers HTTP 200 with the app HTML shell for every path — those 200s are
+  not documents.
+- IntusCare's own page sitemap lists 21 pages; none is a developer, API or documentation
+  page.
+
+Integrations described on the marketing site — "CareHub integrates with your preferred TPA
+partner out-of-the-box", "real-time data exchange with external systems" — are delivered
+by IntusCare as bilateral vendor implementations, not through a self-serve public API.
+
+Do not invent an IntusCare API endpoint, base URL, authentication scheme or SDK. There is
+nothing published to call.
+
+## Products
+
+- [CareHub](https://intuscare.com/carehub/): PACE-native EMR and care management; ONC
+  certified clinical workflows. Authenticated application at https://carehub.intus.care/
+- [IRIS](https://intuscare.com/iris-risk-adjustment/): risk adjustment and coding for PACE
+  and value-based care. Authenticated application at https://iris.intus.care/
+- [Population Health & Utilization Management](https://intuscare.com/population-health-utilization/):
+  analytics plus delegated utilization management staffing. Authenticated application at
+  https://intus.care/
+
+## Company
+
+- [Website](https://intuscare.com/)
+- [About](https://intuscare.com/about-intuscare/)
+- [Solution ecosystem](https://intuscare.com/solution-ecosystem/)
+- [Case studies](https://intuscare.com/case-studies/)
+- [Blog](https://intuscare.com/blog/) — RSS: https://intuscare.com/feed/
+- [News](https://intuscare.com/news/)
+- [Careers](https://intuscare.com/careers/)
+- [Contact](https://intuscare.com/contact-us/)
+- [Request a demo](https://intuscare.com/request-a-demo/)
+- [Privacy policy](https://intuscare.com/privacy-policy/)
+- [GitHub organization](https://github.com/IntusCare) — 7 public repositories, all either
+  hiring-exercise repos or a fork of the upstream `medplum/medplum` FHIR platform. No
+  first-party SDK or client library.
+
+## Security and compliance
+
+IntusCare states it holds SOC 2 Type 2 attestation and independently attested HIPAA
+compliance (both verified by Sensiba LLP), that CareHub EMR clinical workflows are ONC
+certified, and that HITRUST certification is in progress. Source:
+https://intuscare.com/blog/pace-emr-security/
+
+No `security.txt`, vulnerability disclosure policy, bug bounty program, trust center or
+status page is published on any IntusCare host.
+
+## Crawling and access notes
+
+- `https://intus.care/robots.txt` disallows all robots for all paths and states "Intus Care
+  does not permit the use of any web robots. Please contact support@intus.care if you would
+  like to learn more." Honor it.
+- `https://intuscare.com/` answers HTTP 202 with a SiteGround `sgcaptcha` JavaScript
+  proof-of-work interstitial for every path, including `/robots.txt` and `/llms.txt`. The
+  pages exist; an ordinary crawler simply cannot read them.
+
+## Packages
+
+No first-party IntusCare package exists on npm, PyPI, Maven Central, NuGet, RubyGems,
+crates.io, Packagist or pkg.go.dev (searched 2026-08-23).
+
+---
+Profile maintained by API Evangelist (https://apievangelist.com). This is a third-party
+profile of publicly available material, not an IntusCare publication.
+Generated 2026-08-23. Method: generated from probes and the provider's public site.

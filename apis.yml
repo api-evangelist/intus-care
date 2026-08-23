@@ -1,17 +1,36 @@
 aid: intus-care
 name: Intus Care
-description: 'Intus Care is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  IntusCare (Intus Care, Inc.) is a Providence, Rhode Island health technology company
+  building an end-to-end software and services ecosystem for PACE — Programs of
+  All-Inclusive Care for the Elderly. Founded in 2019 by Brown University students Robbie
+  Felton, Evan Jackson and Alex Rothberg, it launched population health analytics at PACE
+  of Rhode Island in 2020 and now serves 70+ PACE organizations. Its products are CareHub,
+  a PACE-native ONC-certified EMR and care-management platform; IRIS, a risk-adjustment
+  and coding system for PACE and value-based care organizations; and a Population Health &
+  Utilization Management suite delivered with fractionally-staffed Integrated Care Services
+  clinicians. IntusCare markets interoperability and out-of-the-box third-party
+  administrator (TPA) integrations, but as of this profile it publishes no public developer
+  program, API reference, or machine-readable contract — customer-facing surfaces are the
+  authenticated CareHub and analytics applications.
 url: https://raw.githubusercontent.com/api-evangelist/intus-care/refs/heads/main/apis.yml
+image: https://intuscare.com/wp-content/uploads/2025/05/logo-intuscare-Favicon.png
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
 specificationVersion: '0.20'
 created: '2026-08-23'
 modified: '2026-08-23'
 tags:
-- Company
+- Health Care
+- Electronic Health Records
+- Population Health
+- Risk Adjustment
+- Senior Care
+- Value-Based Care
+- Analytics
+- Compliance
+- Utilization Management
+- PACE
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -20,4 +39,65 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: https://forgeglobal.com/intus-care_stock/
+  url: https://intuscare.com/
+- type: About
+  url: https://intuscare.com/about-intuscare/
+- type: Blog
+  url: https://intuscare.com/blog/
+- type: BlogRSS
+  url: https://intuscare.com/feed/
+- type: Support
+  url: https://intuscare.com/contact-us/
+- type: Login
+  url: https://carehub.intus.care/
+- type: PrivacyPolicy
+  url: https://intuscare.com/privacy-policy/
+- type: GitHubOrganization
+  url: https://github.com/IntusCare
+- type: CaseStudies
+  url: https://intuscare.com/case-studies/
+- type: Careers
+  url: https://intuscare.com/careers/
+- type: LinkedIn
+  url: https://www.linkedin.com/company/intus-care
+- type: Twitter
+  url: https://x.com/intus_care
+- type: Conformance
+  url: conformance/intus-care-conformance.yml
+- type: Compliance
+  url: conformance/intus-care-conformance.yml
+- type: DomainSecurity
+  url: security/intus-care-domain-security.yml
+- type: Plans
+  url: plans/intus-care-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/intus-care-rate-limits.yml
+- type: LLMsTxt
+  url: llms/intus-care-llms.txt
+x-enrichment:
+  date: '2026-08-23'
+  status: minimal
+  artifacts_added: 6
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    IntusCare sells CareHub, IRIS and its population-health suite as authenticated SaaS to
+    PACE organizations and delivers TPA integrations itself, so it ships no developer
+    portal, API reference or machine-readable contract — carehub.intus.care, the one product
+    origin that returns honest status codes, 404s on /openapi.json, /fhir/R4/metadata and
+    every /.well-known/ path, and no api./developer./docs. subdomain resolves on either
+    intuscare.com or intus.care.
+  evidence:
+  - url: https://carehub.intus.care/openapi.json
+    status: 404
+  - url: https://carehub.intus.care/fhir/R4/metadata
+    status: 404
+  - url: https://carehub.intus.care/.well-known/agent-card.json
+    status: 404
+  - url: https://intus.care/robots.txt
+    status: 200
+  - url: https://intuscare.com/llms.txt
+    status: 202
+  checked: '2026-08-23'

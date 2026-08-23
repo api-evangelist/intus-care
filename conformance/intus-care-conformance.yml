@@ -1,0 +1,100 @@
+generated: '2026-08-23'
+method: searched
+source: https://intuscare.com/blog/pace-emr-security/
+docs: https://intuscare.com/compliance/
+note: >-
+  IntusCare publishes no machine-readable contract, so nothing here is derived from a spec.
+  Every entry below is a compliance/certification claim published by IntusCare on its own
+  site, or an honest negative from a direct probe. The security post could not be fetched
+  directly — intuscare.com answers HTTP 202 with a SiteGround bot-challenge interstitial
+  for every path — so its content was read from search-engine indexing of that exact URL
+  and corroborated across two independent queries.
+conformance:
+- id: hipaa
+  name: HIPAA (US Health Insurance Portability and Accountability Act)
+  conforms: true
+  evidence: >-
+    IntusCare states its HIPAA compliance is independently attested by Sensiba LLP, with
+    regular risk assessments and documented security policies.
+  source: https://intuscare.com/blog/pace-emr-security/
+- id: soc2-type2
+  name: SOC 2 Type 2
+  conforms: true
+  evidence: >-
+    IntusCare states it has completed SOC 2 Type 2 attestation verified by Sensiba LLP,
+    covering both the CareHub and Population Health solutions, renewed annually.
+  source: https://intuscare.com/blog/pace-emr-security/
+- id: onc-certified-health-it
+  name: ONC Certified Health IT (ASTP/ONC Health IT Certification Program)
+  conforms: true
+  evidence: >-
+    IntusCare states CareHub EMR clinical workflows are ONC certified, meeting federal
+    standards for health IT security, privacy and data exchange. The specific certification
+    criteria (including whether §170.315(g)(10) Standardized API for Patient and Population
+    Services is in scope) could not be confirmed — chpl.healthit.gov's REST API requires an
+    API key and returned HTTP 400 "API key must be presented" on 2026-08-23.
+  source: https://intuscare.com/blog/pace-emr-security/
+- id: hitrust
+  name: HITRUST CSF Certification
+  conforms: false
+  status: in-progress
+  evidence: >-
+    IntusCare describes HITRUST certification as in progress and planned for completion
+    later in the year; no certificate is published.
+  source: https://intuscare.com/blog/pace-emr-security/
+- id: fhir
+  name: HL7 FHIR
+  conforms: false
+  evidence: >-
+    No FHIR capability statement is served by any IntusCare host —
+    https://carehub.intus.care/fhir/R4/metadata returned 404 on 2026-08-23. The IntusCare
+    GitHub organization maintains an actively-updated fork of medplum/medplum (a FHIR-native
+    healthcare platform, last pushed 2026-08-12), which is a strong indication the CareHub
+    stack speaks FHIR internally, but a fork of an upstream project is NOT a contract
+    IntusCare publishes and is deliberately not credited as one here.
+  source: https://github.com/IntusCare/medplum
+- id: oauth2
+  name: OAuth 2.0
+  conforms: false
+  evidence: >-
+    No /.well-known/oauth-authorization-server or /.well-known/openid-configuration is
+    served by any IntusCare host (404 on carehub.intus.care; SPA HTML shell on intus.care
+    and iris.intus.care). Authentication for both applications is an interactive login only.
+  source: well-known/intus-care-well-known.yml
+- id: rfc9457
+  name: RFC 9457 Problem Details for HTTP APIs
+  conforms: false
+  evidence: No public API or error reference is published, so no error envelope can be assessed.
+  source: probed 2026-08-23
+domain_standards:
+  market: PACE / value-based senior care, US
+  candidates_probed:
+  - id: fhir-us-core
+    name: HL7 FHIR US Core Implementation Guide
+    declared_in_contract: false
+    note: No contract published; no capability statement reachable.
+  - id: hl7v2
+    name: HL7 v2 messaging
+    declared_in_contract: false
+    note: >-
+      IntusCare markets out-of-the-box integration with any PACE third-party administrator
+      (TPA) and "real-time data exchange with external systems", which in this market is
+      normally HL7 v2 or flat-file exchange, but the exchange format is nowhere stated
+      publicly and is not asserted here.
+    source: https://intuscare.com/pace-emr-tpa-integration/
+  - id: x12
+    name: ASC X12 (837/835 claims and remittance)
+    declared_in_contract: false
+    note: Claims data flows are described in prose only; no message type is published.
+  result: >-
+    No domain standard is declared in any IntusCare-published contract, because IntusCare
+    publishes no contract. This is recorded as an honest absence, not a failure.
+summary:
+  conforms_count: 3
+  compliance_program_published: true
+  certifications:
+  - SOC 2 Type 2
+  - HIPAA (attested)
+  - ONC Certified Health IT
+  auditor: Sensiba LLP
+  trust_center: none published

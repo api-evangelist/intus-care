@@ -1,0 +1,62 @@
+generated: '2026-08-23'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml hosts plus the two authenticated product
+  hosts discovered from the intuscare.com navigation (carehub.intus.care, intus.care)
+hosts:
+- host: intuscare.com
+  role: marketing site (WordPress on SiteGround)
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: 'Oct  8 02:07:07 2026 GMT'
+  hsts: false
+  note: >-
+    Every path on this host answers HTTP 202 with a SiteGround "sgcaptcha" JavaScript
+    proof-of-work interstitial rather than the page, including /robots.txt and /llms.txt.
+- host: intus.care
+  role: population health / IRIS analytics application (authenticated)
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: 'Oct 24 12:22:53 2026 GMT'
+  hsts: true
+  hsts_header: 'max-age=15552000; includeSubDomains'
+  hsts_preload: false
+- host: carehub.intus.care
+  role: CareHub EMR application (authenticated, Next.js)
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: 'Sep 18 23:59:59 2026 GMT'
+  hsts: true
+  hsts_header: 'max-age=31536000; includeSubDomains; preload'
+  hsts_preload: true
+- host: iris.intus.care
+  role: IRIS risk adjustment application (authenticated)
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: 'Sep 18 23:59:59 2026 GMT'
+  hsts: true
+  hsts_header: 'max-age=31536000; includeSubDomains; preload'
+  hsts_preload: true
+domains:
+- domain: intuscare.com
+  dnssec: false
+  caa: []
+  spf: true
+  spf_record: 'v=spf1 include:spf.efwd.registrar-servers.com include:spf.easywp.com ~all'
+  dmarc: true
+  dmarc_policy: none
+- domain: intus.care
+  dnssec: false
+  caa: []
+  spf: true
+  spf_record: 'v=spf1 include:spf.protection.outlook.com include:mail.zendesk.com include:49558872.spf07.hubspotemail.net -all'
+  dmarc: true
+  dmarc_policy: quarantine
+  dmarc_subdomain_policy: quarantine
+  dmarc_rua: present (address withheld)
+findings:
+- Both product hosts (carehub, iris) send HSTS with includeSubDomains and preload; the
+  marketing host sends no HSTS at all.
+- Neither domain publishes a CAA record and neither is DNSSEC-signed.
+- intus.care enforces SPF with a hard fail (-all) and a DMARC quarantine policy;
+  intuscare.com uses a soft-fail SPF (~all) and p=none, so the marketing domain is the
+  weaker of the two for spoofing.

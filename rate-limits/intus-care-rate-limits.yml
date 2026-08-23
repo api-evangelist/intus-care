@@ -1,0 +1,14 @@
+generated: '2026-08-23'
+method: searched
+source: https://intuscare.com/solution-ecosystem/
+limit_count: 0
+note: >-
+  IntusCare publishes no public API, no developer portal and no API reference, so there are
+  no documented rate limits, no published response headers (X-RateLimit-*, RateLimit-*,
+  Retry-After) and no documented exhaustion status code. Nothing was observed on a live
+  unauthenticated response either: the only reachable product origins
+  (carehub.intus.care, intus.care, iris.intus.care) serve authenticated single-page
+  applications and return no rate-limit headers to an anonymous GET. Recorded as a
+  measured zero.
+rate_limits: []
+headers_observed: []
