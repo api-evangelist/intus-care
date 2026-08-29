@@ -14,6 +14,17 @@ description: >-
   program, API reference, or machine-readable contract — customer-facing surfaces are the
   authenticated CareHub and analytics applications.
 url: https://raw.githubusercontent.com/api-evangelist/intus-care/refs/heads/main/apis.yml
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://intuscare.com/wp-content/uploads/2025/05/logo-intuscare-Favicon.png
 x-type: company
 x-source: harvest:secondary-market
