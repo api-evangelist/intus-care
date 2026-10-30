@@ -64,5 +64,95 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Intus Care is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://forgeglobal.com/intus-care_stock/
+IntusCare (Intus Care, Inc.) is a Providence, Rhode Island health technology company building an end-to-end software and services ecosystem for PACE — Programs of All-Inclusive Care for the Elderly. Founded in 2019 by Brown University students Robbie Felton, Evan Jackson and Alex Rothberg, it launched population health analytics at PACE of Rhode Island in 2020 and now serves 70+ PACE organizations. Its products are CareHub, a PACE-native ONC-certified EMR and care-management platform; IRIS, a risk-adjustment and coding system for PACE and value-based care organizations; and a Population Health & Utilization Management suite delivered with fractionally-staffed Integrated Care Services clinicians. IntusCare markets interoperability and out-of-the-box third-party administrator (TPA) integrations, but as of this profile it publishes no public developer program, API reference, or machine-readable contract — customer-facing surfaces are the authenticated CareHub and analytics applications.
+
+**Areas:** Healthcare · Electronic Health Records · Population Health · Risk Adjustment · Senior Care · Value-Based Care · Analytics · Compliance · Utilization Management · PACE
+
+## Intus Care on APIs.io
+
+Everything profiled for Intus Care is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/intus-care/](https://apis.io/providers/intus-care/)** — or go straight to one of the APIs or properties below.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Security (1)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Intus Care Domain Security](https://apis.io/security/intus-care/intus-care-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Intus Care Plans Pricing](https://apis.io/plans/intus-care/intus-care-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Intus Care Rate Limits](https://apis.io/rate-limits/intus-care/intus-care-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://intuscare.com/)
+- [Support](https://intuscare.com/contact-us/)
+- [Blog](https://intuscare.com/blog/)
+- [Privacy policy](https://intuscare.com/privacy-policy/)
+- [GitHub](https://github.com/IntusCare)
+
+## API Evangelist rating
+
+**Kin Score 11.0** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 55.4 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 2.6 |
+| Developer ergonomics | 0.0 |
+| Access clarity | 14.5 |
+
+**Agent readiness 5.4** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | yes |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 12.5** — Health
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/intus-care/](https://apis.io/providers/intus-care/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Intus Care: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/intus-care/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
